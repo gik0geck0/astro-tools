@@ -1,0 +1,224 @@
+---
+import NPFCalculator from '../components/NPFCalculator.tsx';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>NPF Calculator - Astrophotography Tools</title>
+	</head>
+	<body>
+		<main>
+			<header>
+				<nav>
+					<a href="/" class="back-link">← Back to Tools</a>
+				</nav>
+				<h1>NPF Calculator</h1>
+			</header>
+			
+			<NPFCalculator client:load />
+		</main>
+		
+		<style>
+			body {
+				font-family: system-ui, sans-serif;
+				line-height: 1.6;
+				margin: 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+				color: #ffffff;
+				min-height: 100vh;
+			}
+			
+			main {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			
+			header {
+				margin-bottom: 2rem;
+			}
+			
+			.back-link {
+				color: #4facfe;
+				text-decoration: none;
+				font-size: 0.9rem;
+				margin-bottom: 1rem;
+				display: inline-block;
+			}
+			
+			.back-link:hover {
+				text-decoration: underline;
+			}
+			
+			header h1 {
+				font-size: 2.5rem;
+				margin: 0;
+				background: linear-gradient(45deg, #4facfe, #00f2fe);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			
+			:global(.calculator) {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 12px;
+				padding: 2rem;
+				backdrop-filter: blur(10px);
+			}
+			
+			:global(.calculator h2) {
+				margin: 0 0 1rem 0;
+				color: #4facfe;
+				font-size: 1.8rem;
+			}
+			
+			:global(.description) {
+				color: #b0b0b0;
+				margin-bottom: 2rem;
+				line-height: 1.5;
+			}
+			
+			:global(.form-grid) {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+				margin-bottom: 2rem;
+			}
+			
+			:global(.input-group) {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			:global(.input-group label) {
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+				color: #ffffff;
+			}
+			
+			:global(.input-group input) {
+				padding: 0.75rem;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 6px;
+				background: rgba(255, 255, 255, 0.05);
+				color: #ffffff;
+				font-size: 1rem;
+			}
+			
+			:global(.input-group input:focus) {
+				outline: none;
+				border-color: #4facfe;
+				box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+			}
+			
+			:global(.input-group small) {
+				color: #888;
+				font-size: 0.8rem;
+				margin-top: 0.25rem;
+			}
+			
+			:global(.calculate-btn) {
+				background: linear-gradient(45deg, #4facfe, #00f2fe);
+				color: white;
+				border: none;
+				padding: 1rem 2rem;
+				border-radius: 8px;
+				font-size: 1.1rem;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				margin-bottom: 2rem;
+			}
+			
+			:global(.calculate-btn:hover) {
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+			}
+			
+			:global(.result) {
+				background: rgba(79, 172, 254, 0.1);
+				border: 1px solid rgba(79, 172, 254, 0.3);
+				border-radius: 8px;
+				padding: 1.5rem;
+				margin-bottom: 2rem;
+			}
+			
+			:global(.result h3) {
+				margin: 0 0 1rem 0;
+				color: #4facfe;
+			}
+			
+			:global(.result-value) {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+				color: #00f2fe;
+			}
+			
+			:global(.formula) {
+				background: rgba(0, 0, 0, 0.3);
+				padding: 1rem;
+				border-radius: 6px;
+				font-family: monospace;
+				margin-bottom: 1rem;
+				color: #d0d0d0;
+			}
+			
+			:global(.tips) {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 1rem;
+				border-radius: 6px;
+			}
+			
+			:global(.tips h4) {
+				margin: 0 0 0.5rem 0;
+				color: #4facfe;
+			}
+			
+			:global(.tips ul) {
+				margin: 0;
+				padding-left: 1.5rem;
+			}
+			
+			:global(.tips li) {
+				margin-bottom: 0.5rem;
+				color: #d0d0d0;
+			}
+			
+			:global(.common-settings) {
+				margin-top: 2rem;
+			}
+			
+			:global(.common-settings h4) {
+				margin: 0 0 1rem 0;
+				color: #4facfe;
+			}
+			
+			:global(.camera-list) {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+			
+			:global(.camera-btn) {
+				background: rgba(255, 255, 255, 0.1);
+				color: #ffffff;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				font-size: 0.9rem;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+			
+			:global(.camera-btn:hover) {
+				background: rgba(79, 172, 254, 0.2);
+				border-color: #4facfe;
+			}
+		</style>
+	</body>
+</html>

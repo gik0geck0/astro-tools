@@ -6,9 +6,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "astro": "^5.14.5"
+    "@astrojs/preact": "^4.1.1",
+    "astro": "^5.14.5",
+    "preact": "^10.27.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

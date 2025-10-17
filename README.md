@@ -1,43 +1,101 @@
-# Astro Starter Kit: Minimal
+# 🌌 Astrophotography Tools
 
-```sh
-npm create astro@latest -- --template minimal
+A collection of calculators and tools for astrophotography enthusiasts, built with Astro and Preact.
+
+## Features
+
+- **NPF Calculator**: Calculate optimal exposure times to avoid star trails using the Night Photography Factor rule
+- **Pixel Scale & FoV Calculator**: Calculate pixel scale and field of view for your telescope and camera setup
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd astro-tools
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+2. Install dependencies:
+```bash
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+4. Open your browser and navigate to `http://localhost:4321`
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Building for Production
 
-## 🧞 Commands
+To build the static site for production:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+The built files will be in the `dist/` directory, ready to be deployed to any static hosting service.
 
-## 👀 Want to learn more?
+## Project Structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+src/
+├── components/          # Preact components
+│   ├── NPFCalculator.tsx
+│   └── PixelScaleCalculator.tsx
+├── pages/              # Astro pages
+│   ├── index.astro     # Home page
+│   ├── npf-calculator.astro
+│   └── pixel-scale-calculator.astro
+└── layouts/            # Astro layouts (if needed)
+```
+
+## Tools
+
+### NPF Calculator
+
+The NPF (Night Photography Factor) rule is more accurate than the traditional 500 rule for calculating maximum exposure times to avoid star trails. It takes into account:
+
+- Focal length
+- Aperture (f-number)
+- Pixel size
+- Declination (for celestial objects)
+
+### Pixel Scale & FoV Calculator
+
+Calculate important imaging parameters:
+
+- **Pixel Scale**: Arcseconds per pixel
+- **Field of View**: Angular size of your sensor
+- **Sampling Quality**: Whether your setup is properly sampled
+
+## Contributing
+
+This project is designed to be beginner-friendly. To add new tools:
+
+1. Create a new Preact component in `src/components/`
+2. Create a corresponding Astro page in `src/pages/`
+3. Add the tool to the home page
+
+## Deployment
+
+This is a static site that can be deployed to:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
+
+Simply run `npm run build` and upload the `dist/` folder contents.
+
+## License
+
+MIT License - feel free to use and modify as needed.

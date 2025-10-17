@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <html lang="en">
@@ -8,9 +7,115 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Astrophotography Tools</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main>
+			<header>
+				<h1>🌌 Astrophotography Tools</h1>
+				<p>A collection of calculators and tools for astrophotography enthusiasts</p>
+			</header>
+			
+			<section class="tools-grid">
+				<div class="tool-card">
+					<h2>NPF Calculator</h2>
+					<p>Calculate the optimal exposure time to avoid star trails using the NPF (Night Photography Factor) rule.</p>
+					<a href="/npf-calculator" class="tool-link">Use NPF Calculator →</a>
+				</div>
+				
+				<div class="tool-card">
+					<h2>Pixel Scale & FoV Calculator</h2>
+					<p>Calculate pixel scale, field of view, and other imaging parameters for your telescope and camera setup.</p>
+					<a href="/pixel-scale-calculator" class="tool-link">Use Pixel Scale Calculator →</a>
+				</div>
+			</section>
+		</main>
+		
+		<style>
+			body {
+				font-family: system-ui, sans-serif;
+				line-height: 1.6;
+				margin: 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+				color: #ffffff;
+				min-height: 100vh;
+			}
+			
+			main {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			
+			header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			
+			header h1 {
+				font-size: 3rem;
+				margin: 0 0 1rem 0;
+				background: linear-gradient(45deg, #4facfe, #00f2fe);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			
+			header p {
+				font-size: 1.2rem;
+				color: #b0b0b0;
+				margin: 0;
+			}
+			
+			.tools-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+			}
+			
+			.tool-card {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 12px;
+				padding: 2rem;
+				transition: all 0.3s ease;
+				backdrop-filter: blur(10px);
+			}
+			
+			.tool-card:hover {
+				transform: translateY(-5px);
+				background: rgba(255, 255, 255, 0.08);
+				border-color: rgba(79, 172, 254, 0.3);
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+			}
+			
+			.tool-card h2 {
+				margin: 0 0 1rem 0;
+				color: #4facfe;
+				font-size: 1.5rem;
+			}
+			
+			.tool-card p {
+				margin: 0 0 1.5rem 0;
+				color: #d0d0d0;
+				line-height: 1.5;
+			}
+			
+			.tool-link {
+				display: inline-block;
+				background: linear-gradient(45deg, #4facfe, #00f2fe);
+				color: white;
+				text-decoration: none;
+				padding: 0.75rem 1.5rem;
+				border-radius: 8px;
+				font-weight: 600;
+				transition: all 0.3s ease;
+			}
+			
+			.tool-link:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+			}
+		</style>
 	</body>
 </html>
